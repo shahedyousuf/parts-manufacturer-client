@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Lens",
+        "image": "https://i.ibb.co/s31rDxg/lens.png",
+        "description": "A lens is a tool used to bring light to a fixed focal point. In a film camera, the lens sends the light to the film strip, while in a digital camera, the lens directs light to a digital sensor.",
+        "quantity": 500,
+        "available": 1000,
+        "price": 1000
+    },
+    {
+        "_id": 2,
+        "name": "UV Cut off filter",
+        "image": "https://i.ibb.co/rxJRqVV/UV-cut-off-filter.png",
+        "description": "Cut-off filters are used with color CCD or CMOS imagers to produce accurate color images.  An IR cut-off filter blocks the transmission of the infrared while passing the visible.",
+        "quantity": 500,
+        "available": 1000,
+        "price": 500
+    },
+    {
+        "_id": 3,
+        "name": "MP lens",
+        "image": "https://i.ibb.co/HnP5xm1/mp-lens.png",
+        "description": "A Line Pair per Millimeter  specification  prov_ides the resolution properties of a lens and can be used to help select the correct lens for your camera. LP/MM determines the smallest w_idth of a pair of adjacent pixels that can be resolved by the lens.",
+        "quantity": 500,
+        "available": 1000,
+        "price": 700
+    },
+    {
+        "_id": 4,
+        "name": "Plastic protector",
+        "image": "https://i.ibb.co/my9jP2J/plastic.png",
+        "description": "The lens protectors will not affect the phone's image quality in any way. As long as there is no dust particles or lint present when installing the lens protectors and your own phone camera lens is perfectly clean",
+        "quantity": 500,
+        "available": 1000,
+        "price": 100
+    },
+    {
+        "_id": 5,
+        "name": "Tripod",
+        "image": "https://i.ibb.co/fQ3Hzdf/tripod.png",
+        "description": "Almost all modern tripods have a 1/4 inch thread on which you would mount a camera. Almost all consumer and prosumer cameras also have a 1/4 inch female thread, which technically means that all cameras can be mounted on all tripods.",
+        "quantity": 500,
+        "available": 1000,
+        "price": 900
+    },
+    {
+        "_id": 6,
+        "name": "Cut off filter",
+        "image": "https://i.ibb.co/C0D5hwN/cut-off-filter.png",
+        "description": "A cutoff filter is a processor, which can attenuate or completely remove certain partials out of any given frequency spectrum, when the signal is passed through it. ",
+        "quantity": 500,
+        "available": 1000,
+        "price": 300
+    }
+]
