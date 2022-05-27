@@ -9,7 +9,7 @@ const BusinessSummary = () => {
     return (
         <div>
             <h2 className='p-2 m-2 bg-secondary font-bold text-xl'>Our achievements so far!</h2>
-            <div class="stats stats-vertical lg:stats-horizontal shadow mt-5 lg:gap-x-20">
+            <div class="stats p-10 stats-vertical lg:stats-horizontal shadow mt-5 lg:gap-x-20">
                 <div class="stat">
                     <div class="stat-figure text-primary text-5xl">
                         <BsPeopleFill />
