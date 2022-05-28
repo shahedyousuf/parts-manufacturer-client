@@ -4,6 +4,8 @@ import Blogs from './Pages/Blogs/Blogs';
 import Contact from './Pages/Home/Contact';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import RequireAuth from './Pages/Login/RequireAuth';
+import Purchase from './Pages/Purchase/Purchase';
 import Navbar from './Pages/Shared/Navbar';
 import NotFound from './Pages/Shared/NotFound';
 import SignUp from './Pages/SignUp/SignUp';
@@ -17,6 +19,16 @@ function App() {
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        {/* <Route path='/purchase' element={
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>
+        }></Route> */}
+        <Route path='/purchase/:partsId' element={
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>
+        }></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
