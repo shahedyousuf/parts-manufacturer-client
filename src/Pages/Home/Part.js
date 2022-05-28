@@ -10,7 +10,7 @@ const Part = ({ part }) => {
             </figure>
             <div class="card-body items-center text-center">
                 <h2 class="card-title font-bold text-xl text-gray-500">{name}</h2>
-                <p><small>{description}</small></p>
+                <p><small className='font-semibold'>{description}</small></p>
                 <p className='text-violet-500'>Minimum order quantity: {quantity}</p>
                 <p className='text-violet-500'>Available quantity: {available}</p>
                 <p className='text-violet-500'>Price: <span className='font-bold'>${price}</span></p>
