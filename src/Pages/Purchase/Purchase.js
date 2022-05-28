@@ -15,6 +15,11 @@ const Purchase = () => {
             .then(data => setPart(data))
     }, [])
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        alert('booked successfullty')
+    }
+
     return (
         <div>
             <h2 className='p-2 m-2 bg-secondary font-bold text-xl'>Purchase page</h2>
@@ -30,11 +35,11 @@ const Purchase = () => {
                         <p className='text-violet-500'>Minimum order quantity: {part.quantity}</p>
                         <p className='text-violet-500'>Available quantity: {part.available}</p>
                         <p className='text-violet-500'>Price: <span className='font-bold'>${part.price}</span></p>
-                        <input type="text" name="name" className="input input-bordered w-full max-w-xs" disabled value={user?.displayName} />
-                        <input type="email" name="email" className="input input-bordered w-full max-w-xs" disabled value={user?.email} />
-                        <div class="card-actions">
-                            <button class="btn btn-primary">Buy Now</button>
-                        </div>
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" name="name" className="input input-bordered w-full max-w-xs mb-2" disabled value={user?.displayName} />
+                            <input type="email" name="email" className="input input-bordered w-full max-w-xs mb-2" disabled value={user?.email} />
+                            <input type="number" name="number" className="input input-bordered w-full max-w-xs mb-2" placeholder='Phone number' />                            <input type="submit" value="Submit" className='btn btn-secondary w-full max-w-xs' />
+                        </form>
                     </div>
                 </div>
             </div>
