@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../Shared/Footer';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
+import Contact from './Contact';
 import Join from './Join';
 import Parts from './Parts';
 import Reviews from './Reviews';
@@ -15,6 +16,7 @@ const Home = () => {
             <BusinessSummary></BusinessSummary>
             <Join></Join>
             <Reviews></Reviews>
+            <Contact></Contact>
             <Footer></Footer>
         </div>
     );
