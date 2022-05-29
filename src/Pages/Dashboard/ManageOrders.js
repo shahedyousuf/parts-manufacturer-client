@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import AllOrders from '../Dashboard/AllOrders';
 
 const ManageOrders = () => {
-    const { data: orders, isLoading } = useQuery('orders', () => fetch('http://localhost:5000/orders').then(res => res.json()))
+    const { data: orders, isLoading } = useQuery('orders', () => fetch('https://evening-escarpment-73208.herokuapp.com/orders').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

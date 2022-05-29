@@ -10,7 +10,7 @@ const Purchase = () => {
     const { partsId } = useParams();
     const [user, loading, error] = useAuthState(auth);
 
-    const { data: part, isLoading, refetch } = useQuery('parts', () => fetch(`http://localhost:5000/parts/${partsId}`)
+    const { data: part, isLoading, refetch } = useQuery('parts', () => fetch(`https://evening-escarpment-73208.herokuapp.com/parts/${partsId}`)
         .then(res => res.json())
     )
 
@@ -35,7 +35,7 @@ const Purchase = () => {
         }
 
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://evening-escarpment-73208.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

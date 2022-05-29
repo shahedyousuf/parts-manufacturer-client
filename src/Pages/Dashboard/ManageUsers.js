@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import AllUsers from './AllUsers';
 
 const ManageUsers = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://evening-escarpment-73208.herokuapp.com/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
