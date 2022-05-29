@@ -15,6 +15,9 @@ import NotFound from './Pages/Shared/NotFound';
 import SignUp from './Pages/SignUp/SignUp';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
+import ManageUsers from './Pages/Dashboard/ManageUsers';
+import MPortfolio from './Pages/MyPortfolio/MPortfolio';
 
 function App() {
   return (
@@ -43,8 +46,11 @@ function App() {
           <Route index element={<MyOrders />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='profile' element={<MyProfile />}></Route>
+          <Route path='allorders' element={<ManageOrders />}></Route>
+          <Route path='allusers' element={<ManageUsers />}></Route>
         </Route>
         <Route path='/contact' element={<Contact />}></Route>
+        <Route path='/myPortfolio' element={<MPortfolio />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <ToastContainer />
