@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Purchase = () => {
     const { partsId } = useParams();
-    const [part, setPart] = useState({});
     const [user, loading, error] = useAuthState(auth);
 
-    useEffect(() => {
-        const url = `http://localhost:5000/parts/${partsId}`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setPart(data))
-    }, [])
+    const { data: part, isLoading, refetch } = useQuery('parts', () => fetch(`http://localhost:5000/parts/${partsId}`)
+        .then(res => res.json())
+    )
+
+    if (loading || isLoading) {
+        return <Loading />
+    }
 
     const handleOrder = event => {
         event.preventDefault();
         const quantity = event.target.quantity.value;
+
         const order = {
             orderId: part._id,
             orderName: part.name,
@@ -31,6 +34,7 @@ const Purchase = () => {
             phone: event.target.phone.value
         }
 
+
         fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
@@ -42,7 +46,9 @@ const Purchase = () => {
             .then(data => {
                 console.log(data);
                 toast('Order placed successfully');
+                refetch();
             })
+
     }
 
     return (
@@ -60,6 +66,7 @@ const Purchase = () => {
                             <p className='font-semibold'>{part.description}</p>
                             <p className='text-violet-500'>Minimum order quantity: {part.quantity}</p>
                             <input type="number" name="quantity" className="input input-bordered w-full max-w-xs mb-2" placeholder='Your order' />
+
                             <p className='text-violet-500'>Available quantity: {part.available}</p>
                             <p className='text-violet-500'>Price: <span className='font-bold'>${part.price}</span></p>
 
