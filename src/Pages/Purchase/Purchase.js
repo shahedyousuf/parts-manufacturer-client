@@ -15,9 +15,19 @@ const Purchase = () => {
             .then(data => setPart(data))
     }, [])
 
-    const handleSubmit = event => {
+    const handleOrder = event => {
         event.preventDefault();
-        alert('booked successfullty')
+        const quantity = event.target.quantity.value;
+        const order = {
+            orderId: part._id,
+            orderName: part.name,
+            quantity,
+            available: part.available,
+            price: part.price,
+            userName: user.displayName,
+            userEmail: user.email,
+            phone: event.target.phone.value
+        }
     }
 
     return (
@@ -30,17 +40,20 @@ const Purchase = () => {
                     <figure class="px-10 pt-10">
                         <img src={part.image} alt="parts" class="rounded-xl" />
                     </figure>
-                    <div class="card-body items-center text-center">
-                        <p className='font-semibold'>{part.description}</p>
-                        <p className='text-violet-500'>Minimum order quantity: {part.quantity}</p>
-                        <p className='text-violet-500'>Available quantity: {part.available}</p>
-                        <p className='text-violet-500'>Price: <span className='font-bold'>${part.price}</span></p>
-                        <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleOrder}>
+                        <div class="card-body items-center text-center">
+                            <p className='font-semibold'>{part.description}</p>
+                            <p className='text-violet-500'>Minimum order quantity: {part.quantity}</p>
+                            <input type="number" name="quantity" className="input input-bordered w-full max-w-xs mb-2" placeholder='Your order' />
+                            <p className='text-violet-500'>Available quantity: {part.available}</p>
+                            <p className='text-violet-500'>Price: <span className='font-bold'>${part.price}</span></p>
+
                             <input type="text" name="name" className="input input-bordered w-full max-w-xs mb-2" disabled value={user?.displayName} />
                             <input type="email" name="email" className="input input-bordered w-full max-w-xs mb-2" disabled value={user?.email} />
-                            <input type="number" name="number" className="input input-bordered w-full max-w-xs mb-2" placeholder='Phone number' />                            <input type="submit" value="Submit" className='btn btn-secondary w-full max-w-xs' />
-                        </form>
-                    </div>
+                            <input type="number" name="phone" className="input input-bordered w-full max-w-xs mb-2" placeholder='Phone number' />
+                            <input type="submit" value="Order" className='btn btn-secondary w-full max-w-xs' />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
